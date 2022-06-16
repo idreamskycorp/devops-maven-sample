@@ -10,13 +10,14 @@ pipeline {
     }
 
     environment {
-        DOCKER_CREDENTIAL_ID = 'dockerhub-id'
-        GITHUB_CREDENTIAL_ID = 'github-id'
-        KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
-        REGISTRY = 'docker.io'
-        DOCKERHUB_NAMESPACE = 'docker_username'
-        GITHUB_ACCOUNT = 'kubesphere'
-        APP_NAME = 'devops-java-sample'
+        DOCKER_CREDENTIAL_ID = 'harbor2-user'
+        GITHUB_CREDENTIAL_ID = 'ks-github'
+        KUBECONFIG_CREDENTIAL_ID = 'kube-config'
+        REGISTRY = 'harbor2.idreamsky.com:8000'
+        DOCKERHUB_NAMESPACE = 'ks-devops-harbor'
+        GITHUB_ACCOUNT = 'idreamskycorp'
+        APP_NAME = 'devops-maven-sample'
+        SONAR_CREDENTIAL_ID = 'ks-sonarqube'
     }
 
     stages {
