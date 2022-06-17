@@ -17,7 +17,7 @@ pipeline {
         DOCKERHUB_NAMESPACE = 'ks-devops-harbor'
         GITHUB_ACCOUNT = 'idreamskycorp'
         APP_NAME = 'devops-maven-sample'
-        SONAR_CREDENTIAL_ID = 'ks-sonarqube'
+        SONAR_CREDENTIAL_ID = 'ks-sonar-devops-maven-sample'
     }
 
     stages {
