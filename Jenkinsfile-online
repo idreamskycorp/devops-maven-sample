@@ -10,7 +10,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_CREDENTIAL_ID = 'harbor2-user'
+        DOCKER_CREDENTIAL_ID = 'ks-harbor-demo'
         GITHUB_CREDENTIAL_ID = 'ks-github'
         KUBECONFIG_CREDENTIAL_ID = 'kube-config'
         REGISTRY = 'harbor2.idreamsky.com:8000'
