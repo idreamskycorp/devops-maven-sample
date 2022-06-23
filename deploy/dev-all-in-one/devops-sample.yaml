@@ -23,6 +23,7 @@ spec:
         component: ks-sample-dev
         tier: backend
     spec:
+      imagePullSecrets: ks-harbor-demo
       containers:
         - env:
             - name: CACHE_IGNORE
