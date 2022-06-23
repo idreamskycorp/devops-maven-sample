@@ -23,7 +23,8 @@ spec:
         component: ks-sample-dev
         tier: backend
     spec:
-      imagePullSecrets: ks-harbor-demo
+      imagePullSecrets: 
+      - name: ks-harbor-demo
       containers:
         - env:
             - name: CACHE_IGNORE
@@ -38,7 +39,7 @@ spec:
             timeoutSeconds: 10
             failureThreshold: 30
             periodSeconds: 5
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           name: ks-sample
           ports:
             - containerPort: 8080
