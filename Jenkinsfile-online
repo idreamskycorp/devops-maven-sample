@@ -46,6 +46,7 @@ pipeline {
 
         stage('build & push') {
             steps {
+                input(id: 'build-and-push', message: 'sure?')
                 container('maven') {
                     sh 'mvn clean package -DskipTests'
                     sh 'docker build -f Dockerfile-online -t $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER .'
@@ -96,6 +97,7 @@ pipeline {
                 }
             }
             steps {
+                input(id: 'push-with-tag', message: 'sure?')
                 container('maven') {
                     input(id: 'release-image-with-tag', message: 'release image with tag?')
                     withCredentials([usernamePassword(credentialsId: "$GITHUB_CREDENTIAL_ID", passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
